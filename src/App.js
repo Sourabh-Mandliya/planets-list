@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Form, Input, Row, Col } from "reactstrap";
+import Planet from "./Planet";
 
-function App() {
+export default function App() {
+  const [option, setOption] = useState("All");
+
+  function handleOption(event) {
+    setOption(event.target.value);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="container">
+      <br />
+      <h3>Planets Name</h3>
+      <br />
+      <Row>
+        <Col sm={2} lg={2} md={2}>
+          <Form>
+            <Input type="select" name="value" onChange={(e) => handleOption(e)}>
+              <option value="All">All</option>
+              <option value="Favourite">Favourite</option>
+            </Input>
+          </Form>
+        </Col>
+      </Row>
+      <br />
+      <Row>
+      <Planet option={option} />
+      </Row>
     </div>
   );
 }
-
-export default App;
