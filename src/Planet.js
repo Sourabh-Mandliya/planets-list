@@ -27,7 +27,7 @@ function Planet(props) {
   }
 
   const allShow = (
-    <Table striped>
+    <Table dark>
       <thead>
         <tr>
           <th>select</th>
@@ -54,7 +54,7 @@ function Planet(props) {
   );
 
   const favourite = (
-    <Table striped>
+    <Table dark>
       <thead>
         <tr>
           <th>Favourite Planets</th>
